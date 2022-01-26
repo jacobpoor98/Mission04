@@ -39,9 +39,16 @@ namespace Mission04.Controllers
         [HttpPost]
         public IActionResult AddMovie(ApplicationResponse ar)
         {
-            GenContext.Add(ar);
-            GenContext.SaveChanges();
-            return View("Confirmation", ar);
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                GenContext.Add(ar);
+                GenContext.SaveChanges();
+                return View("Confirmation", ar);
+            }
         }
 
         public IActionResult Privacy()
