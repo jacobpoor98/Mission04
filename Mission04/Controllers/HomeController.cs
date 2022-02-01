@@ -12,30 +12,37 @@ namespace Mission04.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        // reference context file
         private MoviesContext GenContext { get; set; }
 
+        // create home controller
         public HomeController(ILogger<HomeController> logger, MoviesContext MovieEntry)
         {
             _logger = logger;
             GenContext = MovieEntry;
         }
 
+        // call index page
         public IActionResult Index()
         {
             return View();
         }
 
+        // call podcast lists
         public IActionResult MyPodcasts()
         {
             return View();
         }
 
+        // call the add movie form
         [HttpGet]
         public IActionResult AddMovie()
         {
             return View();
         }
 
+        // submit the contents (ar) of the form and redirect to a confirmation page
         [HttpPost]
         public IActionResult AddMovie(ApplicationResponse ar)
         {
@@ -51,6 +58,7 @@ namespace Mission04.Controllers
             }
         }
 
+        // calls privacy page, may remove
         public IActionResult Privacy()
         {
             return View();

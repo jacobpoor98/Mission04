@@ -5,9 +5,11 @@ namespace Mission04.Models
 {
     public class ApplicationResponse
     {
+        // this first one creates the primary key for this table
         [Key]
         [Required]
         public int MovieID { get; set; }
+        // the rest are the various values grabbed from the form
         [Required]
         public string Category { get; set; }
         [Required]

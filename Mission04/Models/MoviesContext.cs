@@ -9,8 +9,10 @@ namespace Mission04.Models
         {
         }
 
+        // this access the application response
         public DbSet<ApplicationResponse> responses { get; set; }
 
+        // the following seeds the data with 3 entries
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<ApplicationResponse>().HasData(

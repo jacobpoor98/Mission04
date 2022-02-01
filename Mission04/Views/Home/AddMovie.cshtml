@@ -6,9 +6,12 @@
 
 <h3 style="display:flex; justify-content:center;">Add a movie to the database!</h3>
 <br />
+@*this acts as the form to grab all the contents. Those contents are packaged into
+a variable, ar, and handled via the controller*@
 <div style="display:flex; justify-content:center;">
     <form method="post">
         <label asp-for="Category" style="width:80px;">Category</label>
+        @*I chose to include a drop down list for the categories*@
         <select asp-for="Category" style="width:175px;">
             <option value="Action/Adventure">Action/Adventure</option>
             <option value="Comedy">Comedy</option>
